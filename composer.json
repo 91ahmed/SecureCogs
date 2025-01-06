@@ -1,0 +1,16 @@
+{
+    "name": "ahmed/secure-cogs",
+    "description": "SecureCogs is a PHP data storage package that allows you to store data in an encrypted key-value pair format, providing various methods to simplify data accessibility and maintainability.",
+    "autoload": {
+        "psr-4": {
+            "SecureCogs\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "91ahmed",
+            "email": "ahmedh12491@gmail.com"
+        }
+    ],
+    "require": {}
+}
