@@ -11,6 +11,7 @@
 
 		public function __construct (String $file)
 		{	
+			$file = str_replace(['/', '\\'], DIRECTORY_SEPARATOR, $file);
 			$this->file = $file.'.'.$this->type;
 			$this->crypto = new Crypto();
 			$this->checkFile($file);
