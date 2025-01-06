@@ -29,18 +29,27 @@
 			{
 				$file = str_replace('.'.$this->type, '', $file);
 				$file = explode(DIRECTORY_SEPARATOR, $file);
-				$dataFile = end($file);
-				array_pop($file);
 
-				$file = implode(DIRECTORY_SEPARATOR, $file);
+				if (count($file) == 1) 
+				{
+					$file = implode(DIRECTORY_SEPARATOR, $file).'.'.$this->type;
+					fopen($file, 'w');
+				}
+				else
+				{
+					$dataFile = end($file);
+					array_pop($file);
 
-				if (is_dir($file)) {
-		 			$f = $file.DIRECTORY_SEPARATOR.$dataFile.'.'.$this->type;
-		 			fopen($f, 'w');
-				} else {
-		 			$f = $file.DIRECTORY_SEPARATOR.$dataFile.'.'.$this->type;
-		 			mkdir($file, 0777, true);
-		 			fopen($f, 'w');
+					$file = implode(DIRECTORY_SEPARATOR, $file);
+
+					if (is_dir($file)) {
+			 			$f = $file.DIRECTORY_SEPARATOR.$dataFile.'.'.$this->type;
+			 			fopen($f, 'w');
+					} else {
+			 			$f = $file.DIRECTORY_SEPARATOR.$dataFile.'.'.$this->type;
+			 			mkdir($file, 0777, true);
+			 			fopen($f, 'w');
+					}
 				}
 			}
 			else

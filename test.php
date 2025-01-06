@@ -2,7 +2,7 @@
 	require ('vendor/autoload.php');
 
 
-	$config = new \SecureCogs\Cogs(__DIR__.'\config\app');
+	$config = new \SecureCogs\Cogs('config/app');
 
 	// You can set your own encryption algorithm
 	$config->method('AES-256-CBC');
@@ -10,9 +10,9 @@
 	$config->iv('1982538500398210');
 
 	$config->set('domain', 'https://www.example.com');
-	$config->set('user', 'mido gaber');
+	$config->set('user', 'Mido');
 	$config->set('name', 'Ahmed Hassan');
-	$config->set('age', '33 or 55');
+	$config->set('age', '33');
 	$config->set('email', 'ahmedh12491@gmail.com');
 
 	$config->edit('name', 'Omar Kamal');
