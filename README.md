@@ -2,7 +2,7 @@ SecureCogs is a PHP data storage package that allows you to store data in an enc
 
 #### Composer Installation
 ``` bash
-
+composer require 91ahmed/secure-cogs
 ```
 
 #### Example
