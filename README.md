@@ -33,22 +33,12 @@ $data = $config->data();
 print_r($data);
 ```
 
-#### Change the Encryption Algorithm
+#### Advanced: Custom Encryption Method
 ``` php
+$config = new \SecureCogs\Cogs("path/to/secure_config");
 
-$config = new \SecureCogs\Cogs("path\filename");
-
-// Set your own encryption algorithm / key / iv
+// Change encryption settings
 $config->method('AES-256-CBC');
-$config->key('1a2b813c45f1bH13c29d3812d2e0cfd59db438R029f8287d6f231b2T2079b343');
-$config->iv('1982538500398210');
-```
-
-#### Display the Data in an Array
-``` php
-	
-$config = new \SecureCogs\Cogs("path\filename");
-
-// This method will display the data in its form, without encryption.
-print_r($config->data());
+$config->key('your-very-strong-key-here');
+$config->iv('your-initialization-vector');
 ```
