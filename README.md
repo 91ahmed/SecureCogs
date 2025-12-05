@@ -1,4 +1,4 @@
-SecureCogs is a PHP data storage package that allows you to store data in an encrypted key-value pair format, providing various methods to simplify data accessibility and maintainability.
+SecureCogs is a PHP data storage package that allows you to store data in an encrypted key-value pair format.
 
 ## Features
 
