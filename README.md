@@ -1,25 +1,36 @@
 SecureCogs is a PHP data storage package that allows you to store data in an encrypted key-value pair format, providing various methods to simplify data accessibility and maintainability.
 
+## Features
+
+* Encrypted key-value storage in flat files.
+* Customizable encryption algorithm, key, and IV.
+* Returns data as PHP array — easy to integrate.
+* No external dependencies beyond standard PHP + composer autoload.
+
 #### Composer Installation
 ``` bash
 composer require 91ahmed/secure-cogs
 ```
 
-#### Example
+#### Usage Example
 ``` php
+require 'vendor/autoload.php';
 
-require ('vendor/autoload.php');
+// Create (or load) a config file (filename without extension)
+$config = new \SecureCogs\Cogs("path/to/secure_config");
 
-// Set the path to the config file.
-// The filename should not include an extension.
-$config = new \SecureCogs\Cogs("path\filename");
-
-// Set new data.
+// Set a new key-value pair
 $config->set('key', 'value');
-// Edit the value of an existing key.
+
+// Update an existing key
 $config->edit('key', 'new value');
-// Delete existing key.
+
+// Delete a key
 $config->delete('key');
+
+// Get all stored data (decrypted)
+$data = $config->data();
+print_r($data);
 ```
 
 #### Change the Encryption Algorithm
